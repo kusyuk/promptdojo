@@ -1,0 +1,8 @@
+[build]
+  publish = "build/web"
+  command = "flutter build web --release --dart-define=WATSONX_PROJECT_ID=$WATSONX_PROJECT_ID --dart-define=WATSONX_API_KEY=$WATSONX_API_KEY --dart-define=WATSONX_ENDPOINT=$WATSONX_ENDPOINT --dart-define=WATSONX_MODEL_ID=$WATSONX_MODEL_ID"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
