@@ -58,13 +58,14 @@ class WatsonxService {
 
       // Build request URL
       final url =
-          '${WatsonxConfig.endpoint}/ml/v1/text/generation?version=2023-05-29';
+          '${WatsonxConfig.resolvedEndpoint}/ml/v1/text/generation?version=2023-05-29';
 
       // Build prompt with system instructions
       final fullPrompt = Prompts.buildPrompt(userPrompt);
 
       debugPrint('watsonx.ai - Sending request to: $url');
-      debugPrint('watsonx.ai - Input prompt: $userPrompt');
+      debugPrint('watsonx.ai - User input: $userPrompt');
+      debugPrint('watsonx.ai - Full prompt sent:\n$fullPrompt');
 
       // Make API request
       final response = await http
@@ -78,10 +79,8 @@ class WatsonxService {
             body: jsonEncode({
               'input': fullPrompt,
               'parameters': {
-                'decoding_method': 'greedy',
                 'max_new_tokens': 200,
-                'temperature': 0.7,
-                'stop_sequences': ['}'],
+                'min_new_tokens': 1,
               },
               'model_id': WatsonxConfig.modelId,
               'project_id': WatsonxConfig.projectId,
@@ -96,6 +95,7 @@ class WatsonxService {
 
       // Check response status
       debugPrint('watsonx.ai - Response status: ${response.statusCode}');
+      debugPrint('watsonx.ai - Raw response body: ${response.body}');
 
       if (response.statusCode != 200) {
         debugPrint('watsonx.ai - Error response: ${response.body}');

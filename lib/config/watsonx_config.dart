@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+
 /// Configuration for IBM watsonx.ai API
 ///
 /// Uses Compile-Time Variables (Dart Defines) for security.
@@ -29,6 +31,31 @@ class WatsonxConfig {
 
   /// IAM token endpoint for authentication
   static const String iamTokenUrl = 'https://iam.cloud.ibm.com/identity/token';
+
+  /// Get the actual watsonx endpoint URL, dynamically resolving for Web CORS proxy if needed
+  static String get resolvedEndpoint {
+    if (kIsWeb) {
+      final host = Uri.base.host;
+      // If deployed on Netlify (not local web dev), route through our rewrite proxy
+      if (host.isNotEmpty && !host.contains('localhost') && !host.contains('127.0.0.1')) {
+        return '/api/watsonx';
+      }
+    }
+    return endpoint;
+  }
+
+  /// Get the resolved IAM token URL, dynamically resolving for Web CORS proxy if needed
+  static String get resolvedIamTokenUrl {
+    if (kIsWeb) {
+      final host = Uri.base.host;
+      // If deployed on Netlify (not local web dev), route through our rewrite proxy
+      if (host.isNotEmpty && !host.contains('localhost') && !host.contains('127.0.0.1')) {
+        return '/api/iam/identity/token';
+      }
+    }
+    return iamTokenUrl;
+  }
+
 
   /// Validate that all required configuration is present
   static bool get isConfigured {
