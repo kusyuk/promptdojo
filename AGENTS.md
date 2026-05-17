@@ -14,7 +14,7 @@ PromptDojo is a gamified visual novel for IBM Bob Hackathon teaching prompt engi
 - Penalty calculation formula: `(10 - api_quality_score) * 40`, multiply by 2 if `hasBlueprint == false`
 
 ### API Integration (watsonx.ai)
-- Uses IBM watsonx.ai **granite-guardian-3-8b** model (not GPT or other LLMs)
+- Uses IBM watsonx.ai **granite-4-h-small** model (not GPT or other LLMs)
 - Requires: Project ID, Dallas Region Endpoint URL, IAM Access Token (from IBM Cloud API Key)
 - API must return **strict JSON only**: `{"quality_score": <1-10>, "archmage_feedback": "<string>"}`
 - System prompt enforces character-based feedback as "Archmage Bob" with magic/mana metaphors

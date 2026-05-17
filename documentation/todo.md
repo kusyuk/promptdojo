@@ -124,7 +124,7 @@ This checklist tracks all implementation tasks for the PromptDojo project. Mark 
 - [x] Build API request with:
   - [x] System prompt from PRD
   - [x] User prompt
-  - [x] Model: granite-guardian-3-8b
+  - [x] Model: granite-4-h-small
   - [x] Temperature and other parameters
 - [x] Parse JSON response
 - [x] Handle API errors (timeout, network, invalid response)

@@ -26,7 +26,7 @@ class WatsonxConfig {
   /// Model ID to use for prompt evaluation
   static const String modelId = String.fromEnvironment(
     'WATSONX_MODEL_ID',
-    defaultValue: 'ibm/granite-8b-code-instruct',
+    defaultValue: 'ibm/granite-4-h-small',
   );
 
   /// IAM token endpoint for authentication

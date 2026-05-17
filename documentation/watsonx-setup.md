@@ -4,7 +4,7 @@ This guide provides step-by-step instructions for setting up IBM watsonx.ai for 
 
 ## Overview
 
-PromptDojo uses IBM watsonx.ai's **granite-guardian-3-8b** model to evaluate user prompts in real-time. The setup requires:
+PromptDojo uses IBM watsonx.ai's **granite-4-h-small** model to evaluate user prompts in real-time. The setup requires:
 - IBM Cloud account
 - watsonx.ai project in Dallas region
 - API key for authentication
@@ -178,7 +178,7 @@ curl -X POST 'https://us-south.ml.cloud.ibm.com/ml/v1/text/generation?version=20
       "max_new_tokens": 200,
       "temperature": 0.7
     },
-    "model_id": "ibm/granite-guardian-3-8b",
+    "model_id": "ibm/granite-4-h-small",
     "project_id": "YOUR_PROJECT_ID_HERE"
   }'
 ```
@@ -190,7 +190,7 @@ Replace:
 **Expected Response:**
 ```json
 {
-  "model_id": "ibm/granite-guardian-3-8b",
+  "model_id": "ibm/granite-4-h-small",
   "created_at": "2024-01-01T00:00:00.000Z",
   "results": [
     {
@@ -217,7 +217,7 @@ Create a `.env` file in your project root (add to `.gitignore`):
 WATSONX_PROJECT_ID=your-project-id-here
 WATSONX_API_KEY=your-api-key-here
 WATSONX_ENDPOINT=https://us-south.ml.cloud.ibm.com
-WATSONX_MODEL_ID=ibm/granite-guardian-3-8b
+WATSONX_MODEL_ID=ibm/granite-4-h-small
 ```
 
 ### 7.2 Alternative: Configuration File
@@ -231,7 +231,7 @@ class WatsonxConfig {
   static const String projectId = 'YOUR_PROJECT_ID';
   static const String apiKey = 'YOUR_API_KEY'; // Use secure storage!
   static const String endpoint = 'https://us-south.ml.cloud.ibm.com';
-  static const String modelId = 'ibm/granite-guardian-3-8b';
+  static const String modelId = 'ibm/granite-4-h-small';
   static const String iamTokenUrl = 'https://iam.cloud.ibm.com/identity/token';
 }
 ```
@@ -344,7 +344,7 @@ class WatsonxService {
           'max_new_tokens': 200,
           'temperature': 0.7,
         },
-        'model_id': 'ibm/granite-guardian-3-8b',
+        'model_id': 'ibm/granite-4-h-small',
         'project_id': projectId,
       }),
     );
@@ -406,7 +406,7 @@ class WatsonxService {
 
 ### Issue: "Model not available"
 **Solution:**
-- Verify model ID: `ibm/granite-guardian-3-8b`
+- Verify model ID: `ibm/granite-4-h-small`
 - Check model is available in your region
 - Try alternative granite models if needed
 
@@ -472,7 +472,7 @@ class WatsonxService {
 - ✅ Project ID: `________________________________________`
 - ✅ API Key: `________________________________________` (keep secure!)
 - ✅ Region: Dallas (us-south)
-- ✅ Model: ibm/granite-guardian-3-8b
+- ✅ Model: ibm/granite-4-h-small
 
 ---
 

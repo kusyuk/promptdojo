@@ -8,7 +8,7 @@ import 'iam_token_service.dart';
 
 /// Service for interacting with IBM watsonx.ai API
 ///
-/// Handles prompt evaluation using the granite-guardian-3-8b model.
+/// Handles prompt evaluation using the granite-4-h-small model.
 /// Includes automatic token management and retry logic.
 class WatsonxService {
   final IamTokenService _tokenService = IamTokenService();

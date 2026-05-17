@@ -57,7 +57,7 @@ This section outlines the steps taken from concept to the final, working MVP. We
 
 5. **watsonx.ai Integration:**
 * [X] Created the necessary REST API services and placeholder classes in `core/` to securely manage the project ID, endpoints, and IAM authentication, ensuring no API keys were committed to the repository.
-* [X] Generated a few-shot evaluation **System Prompt** for the `granite-3-8b-instruct` model to score and provide character-specific feedback on player prompts.
+* [X] Generated a few-shot evaluation **System Prompt** for the `granite-4-h-small` model to score and provide character-specific feedback on player prompts.
 
 
 
@@ -65,7 +65,7 @@ This section outlines the steps taken from concept to the final, working MVP. We
 
 * **Frontend:** Flutter (compiled to Flutter Web).
 * **State Management:** Riverpod.
-* **AI Inference:** IBM watsonx.ai (`granite-8b-code-instruct` model).
+* **AI Inference:** IBM watsonx.ai (`granite-4-h-small` model).
 * **UI/UX/Animations:** Standard Flutter Widgets (`AnimatedContainer`, `TweenAnimationBuilder`), `animated_text_kit`, `audioplayers`.
 * **Build Partner:** IBM Bob IDE.
 
@@ -119,7 +119,7 @@ flutter run \
   --dart-define=WATSONX_API_KEY=your_sandbox_key_here \
   --dart-define=WATSONX_PROJECT_ID=your_project_id_here \
   --dart-define=WATSONX_ENDPOINT=https://us-south.ml.cloud.ibm.com \
-  --dart-define=WATSONX_MODEL_ID=ibm/granite-8b-code-instruct
+  --dart-define=WATSONX_MODEL_ID=ibm/granite-4-h-small
 
 
 ## 🛣️ Future Roadmap

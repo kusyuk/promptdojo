@@ -21,7 +21,7 @@ The MVP will utilize a streamlined, lightweight stack designed for rapid develop
 * **Game Engine Strategy:** **Standard Flutter Widgets** (No Flame Engine). The visual novel format relies on UI state changes rather than game-loop physics, making standard Flutter highly efficient and perfectly suited for IBM Bob's code generation capabilities.  
 * **Local State Management:** Riverpod (to instantly sync the UI "Mana Bar" and dialogue nodes with the underlying game math without prop drilling).  
 * **Architecture:** Clean Architecture  
-* **Evaluation Engine:** IBM watsonx.ai API (granite-guardian-3-8b model) for real-time prompt evaluation.
+* **Evaluation Engine:** IBM watsonx.ai API (granite-4-h-small model) for real-time prompt evaluation.
 
 ## **4\. Local State Management Schema**
 

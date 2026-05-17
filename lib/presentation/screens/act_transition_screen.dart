@@ -419,9 +419,9 @@ class _ActTransitionScreenState extends State<ActTransitionScreen>
           actLabel: 'ACT I',
           actTitle: 'THE ACCIDENTAL CASTING',
           narrativeText:
-              'A sudden overload surges through the scrying mirror. With your mana channel dangerously leaking, you must bypass the safety restrictions of granite-guardian-3-8b with your very first spell.',
+              'A sudden overload surges through the scrying mirror. With your mana channel dangerously leaking, you must bypass the safety restrictions of granite-4-h-small with your very first spell.',
           mockLogs: [
-            '> Initializing Granite Guardian v3-8b...',
+            '> Initializing Granite 4-h-small...',
             '> Calibrating local mana flux channels... OK',
             '> WARNING: High mana leakage detected (Act I tutorial)',
             '> Arcane firewalls bypassing... OK',
